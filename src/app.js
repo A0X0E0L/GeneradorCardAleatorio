@@ -7,5 +7,39 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  const palos = ["♦", "♥", "♠", "♣"];
+  const numbers = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "K",
+    "Q",
+    "J",
+    "As"
+  ];
+
+  let indexPalos = Math.floor(Math.random() * palos.length);
+  let indexNumbers = Math.floor(Math.random() * numbers.length);
+
+  let color =
+    palos[indexPalos] == "♦" || palos[indexPalos] == "♥" ? "red" : "black";
+
+  console.log(palos[indexPalos]);
+  let top = document.querySelector(".top");
+  let bottom = document.querySelector(".bottom");
+  let number = document.querySelector(".number");
+  top.innerHTML = palos[indexPalos];
+
+  document.querySelector(".top").style.color = color;
+  document.querySelector(".bottom").style.color = color;
+  document.querySelector(".number").style.color = color;
+
+  bottom.innerHTML = palos[indexPalos];
+  number.innerHTML = numbers[indexNumbers];
 };
